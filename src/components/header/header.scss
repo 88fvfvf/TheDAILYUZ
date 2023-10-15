@@ -1,0 +1,279 @@
+@import '../../styles/mixins.scss';
+a{
+    text-decoration: none;
+}
+.container-header-top-right{
+    @include flex(center,space-between);
+    gap: 45px;
+}
+.header {
+    &__top {
+        display: flex;
+        flex-wrap: wrap;
+        background: var(--brand, #0F1640);
+        padding-block: 6px;
+        
+        > div {
+            @include flex(center, space-between);
+            flex-wrap: wrap
+        }
+
+        &_left {
+            @include flex(center, flex-start);
+            gap: 16px;
+
+            >.swiper-slide p{
+                color: #fff;
+
+                >.swiper-slide span{
+                    padding-left: 5px;
+                    font-weight: 500;
+                    color: #21853E;
+                }
+            }
+        }
+
+        &_right {
+            @include flex(center, flex-end);
+
+            > span {
+                color: var(--white, #FFF);
+                font-size: 16px;
+                font-family:'Poppins';
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                text-decoration-line: none;
+                cursor: pointer;
+            }
+
+            > span.activated_header {
+                color: var(--white, #FFF);
+                font-size: 16px;
+                font-family:'Poppins';
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                text-decoration-line: none;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__center {
+        background-color: white;
+        padding-block: 20px;
+
+
+        > div {
+            @include flex(center, space-between);
+            gap: 60px;
+        }
+
+        &_left {
+            @include flex(center, flex-start);
+            gap: 16px;
+        }
+        input::placeholder{
+            color: #A8B1EB;
+        }
+        &_right {
+                width: 100%;
+                @include flex(center, flex-end);
+            > input {
+                position: relative;
+                border-radius: 30px;
+                border: 1px solid #D3D8F5;
+                padding: 8px 16px;
+                padding-right: 40px;
+                max-width: 413px;
+                width: 100%;
+                height: 40px;
+            }
+        }
+        .weather-text,.calendar-text p:nth-of-type(1){
+            color: var(--brand, #0F1640);
+            font-size: 16px;
+            font-family: 'Poppins';
+            font-weight: 600;
+            width: max-content;
+            display: block;
+        }
+        .weather-text p:nth-of-type(2){
+            color: #A8B1EB;
+            font-size: 12px;
+            font-family:'Poppins';
+            font-weight: 400;
+        }
+        .calendar-text p:nth-of-type(2){
+            color: #A8B1EB;
+            font-size: 12px;
+            font-family:'Poppins';
+            font-weight: 400;
+        }
+        .calendar-text,.weather-text{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+        .weather-text{
+            gap: 0;
+        }
+        #inputRelative {
+            position: relative;
+        }
+        
+        #Loop {
+            position: relative;
+            top: -8px;
+            right: 40px;
+            width: 0;
+            height: 0;
+            cursor: pointer;
+        }
+          
+    }
+
+    &__bottom {
+        @include flex(center,center);    
+        background: var(--brand-50, #EAECF6);
+        padding-block: 20px;
+
+        > ul{
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+    .bottom_ul a{
+        position: relative;
+        color: var(--brand-600, #0F1640);
+        list-style: none;
+        font-size: 16px;
+        font-family:'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .bottom_ul a:hover{
+        color: var(--brand-600, #19256C);
+        font-size: 16px;
+        font-family:'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+}
+
+.bottom_ul a:hover::after{
+    content: "";
+    display: flex;
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background: #19256C;
+}
+
+.calendar-text,.weather-text{
+    gap: 10px;
+}
+.icone{
+    display: flex;
+    width: auto;
+    gap: 15px;
+}
+
+.ico-weth > img{
+    width: 45px;
+}
+
+.header__top_left{
+    width: 200px !important;
+    color: #FFF;
+}
+
+#select{
+    border: none;
+}
+.header__top_left .span{
+    font-weight: 500;
+    color: #21853E;
+}
+@media screen and (max-width: 742px) {
+    .header__top > div{
+        @include flex(center,center);
+    }
+    .swiper-slide{
+        text-align: center;
+    }
+    .header__bottom{
+        overflow-x: scroll;
+    }
+    .header__bottom::-webkit-scrollbar{
+        width: 5px;
+        height: 5px;
+    }
+    .header__bottom::-webkit-scrollbar-track{
+        background: none;
+    }
+    .header__bottom::-webkit-scrollbar-thumb{
+        background-color: #0F1640;
+        border-radius: 10px;
+    }
+
+    .bottom_ul a:hover::after{
+        content: "";
+        display: flex;
+        position: absolute;
+        top: -20px;
+    }
+    
+}
+@media screen and (max-width: 466px) {
+    .header__top_left{
+        @include flex(center,center);
+        flex-wrap: wrap;
+    }    
+}
+
+@media screen and (max-width: 790px){
+    .header__center > div{
+        @include flex(center,center);
+        flex-wrap: wrap;
+        gap: 15px;
+
+        >.header__center_right{
+            justify-content: center;
+        }
+    }
+    .header__center_left{
+        @include flex(center,center);
+        flex-wrap: wrap;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .header__center_left{
+        display: flex;
+        flex-direction: column;
+
+        >div{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    .header__center_right{
+        width: 70% ;
+    }
+}
+
+@media screen and (max-width: 319px){
+    .swiper-slide{
+        padding-block: 10px;
+    }
+    .icone{
+        gap: 0px;
+    }
+}

@@ -1,0 +1,77 @@
+.footer{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    background: #0F1640;
+    margin-top: 50px;
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+}
+.Footer__Test{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-block: 50px;
+    color: #fff;
+    gap: 100px;
+}
+ul{
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    gap: 30px;
+}
+.ul__li li{
+    color: #fff;
+}
+.ul__li li:hover{
+    color: #5064D6;
+    text-decoration: underline;
+}
+.Icon__Footer{
+    display: flex;
+    flex-direction: column;
+
+    > div{
+        padding-top: 22px;
+    }
+}
+.Contact__Footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+}
+
+@media screen and (max-width: 1292px) {
+    .Footer__Test{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .Icon__Social_Footer{
+        display: flex;
+        justify-content: center;
+    }
+    .ul__li{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 551px) {
+    .Icon__Footer >svg{
+        width: 200px;
+    }
+}
