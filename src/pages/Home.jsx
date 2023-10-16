@@ -9,8 +9,7 @@ import NewsEvent from "../components/NewsEvent/NewsEvent";
 import { message } from 'antd';
 
 const Home = () => {
-
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1);
 
   const Click = () => {
     setPage(page + 1);
@@ -25,38 +24,41 @@ const Home = () => {
     });
   };
 
-
-  const [event, setEvent] = useState([])
-
+  const [event, setEvent] = useState([]);
+  const uniqueEventSet = new Set();
 
   useEffect(() => {
     axios.get(`${Base_Url}?page=${page}&page_size=4`)
       .then(SearchThen => {
-        setEvent(SearchThen?.data?.results)
+        // Filter out duplicates and add only unique items to the set
+        SearchThen?.data?.results.forEach(item => {
+          if (!uniqueEventSet.has(item.id)) {
+            uniqueEventSet.add(item.id);
+            setEvent(prevData => [...prevData, item]);
+          }
+        });
       })
       .catch(not => {
-        error()
-      })
-  }, [page])
-
-
+        error();
+      });
+  }, [page]);
 
   let data = {
     news_single: 'Yangiliklar',
     dayjest_title: 'Hafta Dayjesti',
-  }
+  };
 
-  const [lastWeek, setlastweek] = useState([])
+  const [lastWeek, setlastweek] = useState([]);
 
   useEffect(() => {
     axios.get(`${Base_Url}last-week/`).then(lastWeek => {
-      setlastweek(lastWeek?.data)
-    })
-  }, [])
+      setlastweek(lastWeek?.data);
+    });
+  }, []);
 
   return (
     <>
-    {contextHolder}
+      {contextHolder}
       <Header />
       <Hero />
       <Dayjest dayjest_title={data?.dayjest_title} lastWeek={lastWeek} />
@@ -64,8 +66,7 @@ const Home = () => {
       <NewsEvent title={data?.news_single} content={event} Click={Click} />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-
-export default Home
+export default Home;

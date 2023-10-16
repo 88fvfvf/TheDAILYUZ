@@ -144,6 +144,14 @@ a{
             align-items: flex-start;
         }
     }
+    .bottom_ul{
+        display: flex;
+        align-items: flex-start;
+        text-decoration: none;
+        list-style: none;
+        cursor: pointer;
+        gap: 30px;
+    }
     .bottom_ul a{
         position: relative;
         color: var(--brand-600, #0F1640);
@@ -202,7 +210,7 @@ a{
 }
 @media screen and (max-width: 742px) {
     .header__top > div{
-        @include flex(center,center);
+        @include flex(center,space-between);
     }
     .swiper-slide{
         text-align: center;
@@ -235,6 +243,9 @@ a{
         @include flex(center,center);
         flex-wrap: wrap;
     }    
+    .header__top > div{
+        gap: 10px;
+    }
 }
 
 @media screen and (max-width: 790px){
@@ -270,6 +281,11 @@ a{
 }
 
 @media screen and (max-width: 319px){
+    .header__top > div{
+        @include flex(center,center);
+        flex-direction: column;
+        gap: 0;
+    }
     .swiper-slide{
         padding-block: 10px;
     }

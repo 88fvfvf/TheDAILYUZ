@@ -199,7 +199,7 @@ const Header = ({ setPage }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.location.href = `/search?${value}`;
+    window.location.href = `/search?${value}`;  
   };
 
   const [category, setCategory] = useState([]);

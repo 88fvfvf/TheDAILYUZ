@@ -82,7 +82,7 @@ const NewsEvent = ({title,content,Click}) =>{
                         {
                            Array.isArray(content) && content.map(EventCard => <Card key={EventCard.id} content={EventCard}/>)
                         }
-                        <a href="#NewsTop"><button onClick={Click}><Resets/>Ko’proq</button></a>
+                        <a><button onClick={Click}><Resets/>Ko’proq</button></a>
 
                     </div>         
                 </div>
@@ -95,7 +95,7 @@ const NewsEvent = ({title,content,Click}) =>{
                                 )
                             }
                         </div>
-                        <a href="#right"><button onClick={ClickMost}><Resets/>Ko’proq</button></a>
+                        <a><button onClick={ClickMost}><Resets/>Ko’proq</button></a>
                 </div>
                 </div>
             </div>
