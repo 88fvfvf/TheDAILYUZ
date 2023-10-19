@@ -31,7 +31,7 @@ const Card = ({ content }) => {
       const UrlData = new URL(content?.url);
     return (
             <div className="All_Event">
-            <Link to={`/SinglePage${UrlData.pathname}`} onClick={handleClick}>
+            <Link to={`${UrlData.pathname}`} onClick={handleClick}>
                 <div className="Event_Text">
                     <h1>{title}</h1>
                         <p>{finish}</p>

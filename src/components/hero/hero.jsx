@@ -35,7 +35,7 @@ const Hero = () => {
                                         text = text.slice(0, maxLength) + '...';
                                     }                                    
                                     return (
-                                        <Link to={`/SinglePage${UrlData.pathname}`}>
+                                        <Link to={`${UrlData.pathname}`}>
                                             <div className="hero__left_img">
                                                 <img src={single?.image} alt="hero photo" />
                                                 <div className="Linear__Photo"></div>

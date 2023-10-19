@@ -16,7 +16,7 @@ const HeroCard = ({title,image,Upload,Upload_Time,View, url}) => {
         <div>
             <img src={image} width="194"/>
                 <div className="text">
-                        <h3><Link to={`/SinglePage${UrlData.pathname}`} onClick={handleClick}>{title}</Link></h3>
+                        <h3><Link to={`${UrlData.pathname}`} onClick={handleClick}>{title}</Link></h3>
                     <div className="Icon">
                         <div>
                             <span>

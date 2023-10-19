@@ -21,7 +21,7 @@ const Dayjest_Card = ({ url, Content_img, Content_text, Content_date, Content_cl
     }
     const UrlData = new URL(url);
     return (
-        <Link to={`/SinglePage${UrlData.pathname}`} onClick={handleClick}>
+        <Link to={`${UrlData.pathname}`} onClick={handleClick}>
             <div className="Card_Wrapper">
                 <img src={`${Content_img}`} alt="Content"/>
                 <div className="Content_text">

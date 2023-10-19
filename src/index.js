@@ -25,7 +25,7 @@ const routesPrivate = [
     component: <Category/>
   },
   {
-    path: "/SinglePage/:year/:month/:day/:slug",
+    path: "/:year/:month/:day/:slug",
     component: <SinglePage/>
   },
   {
