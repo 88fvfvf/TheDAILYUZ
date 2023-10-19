@@ -134,7 +134,7 @@ const Header = ({ setPage }) => {
             break;
           default:
             Local = "41.2995%2C69.2401";
-            setSity("Toshkent. sh.");
+            setSity("Topilmadi");
         }
 
         axios
@@ -191,7 +191,7 @@ const Header = ({ setPage }) => {
       Weth = "Yomg'ir Kutilmoqda";
       break;
     default:
-      Weth = "Unknown";
+      Weth = "Aniqlanmadi";
   }
 
   const search = useLocation().search;
@@ -308,29 +308,29 @@ const Header = ({ setPage }) => {
                 modules={[Autoplay]}
               >
                 <SwiperSlide>
-                  <p>
+                  <p className="course">
                     {res?.usd?.name} <strong>{res?.usd?.rate}</strong>
                     <span className="span" id="usd">
                       {" "}
-                      {"+" + res?.usd?.diff}
+                      {res?.usd?.diff}
                     </span>
                   </p>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <p>
+                  <p className="course">
                     {res?.rub?.name} <strong>{res?.rub?.rate}</strong>
                     <span className="span" id="rub">
                       {" "}
-                      {"+" + res?.rub?.diff}
+                      {res?.rub?.diff}
                     </span>
                   </p>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <p>
+                  <p className="course">
                     {res?.eur?.name} <strong>{res?.eur?.rate}</strong>
                     <span className="span" id="eur">
                       {" "}
-                      {"+" + res?.eur?.diff}
+                      {res?.eur?.diff}
                     </span>
                   </p>
                 </SwiperSlide>
@@ -374,7 +374,7 @@ const Header = ({ setPage }) => {
 
                 <div className="weather-text">
                   <div className="ico-weth">
-                    <img src={weather?.icon} alt="NO images(" />
+                    <img src={weather?.icon}/>
                   </div>
                   <div className="ico-weth-txt">
                     <p>

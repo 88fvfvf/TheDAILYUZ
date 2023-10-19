@@ -93,11 +93,6 @@
     }
 }
 
-.hero__left_img:hover .Position_text > h2{
-    transition: all 0.3 ease;
-    color: #5064D6;
-}
-
 .line_card{
     position: absolute;
     width: 635px;
@@ -151,7 +146,7 @@
     max-width: 90%;
     width: 500px;
     min-width: 5%;
-    top: 70%;
+    top: 77%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

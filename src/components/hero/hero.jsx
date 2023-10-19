@@ -29,13 +29,18 @@ const Hero = () => {
                             data.slice(3).map(single => {
                                 try {
                                     const UrlData = new URL(single?.url);
+                                    var maxLength = 70
+                                    var text = single?.title;
+                                    if (text.length > maxLength){
+                                        text = text.slice(0, maxLength) + '...';
+                                    }                                    
                                     return (
                                         <Link to={`/SinglePage${UrlData.pathname}`}>
                                             <div className="hero__left_img">
                                                 <img src={single?.image} alt="hero photo" />
                                                 <div className="Linear__Photo"></div>
                                                 <div className="Position_text">
-                                                    <h2>{single?.title}</h2>
+                                                    <h2>{text}</h2>
                                                     <div className="Line"></div>
                                                     <div className="Icon_post">
                                                         <Calendar_Glavniy_post />

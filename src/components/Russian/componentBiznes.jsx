@@ -61,7 +61,6 @@ const CompoBiznes = () => {
       {contextHolder}
       <div className="container">
         <div className="Title__h1">
-          <span>Biznes</span>
           <h1>{Single?.title}</h1>
         </div>
         <div className="Date__And">
@@ -79,14 +78,10 @@ const CompoBiznes = () => {
             <span>{Single?.views_count}</span>
           </div>
           <div className="Link__Connect">
-            <div className="Link" onClick={SuccesClick}>
-              <Link__Biznes />
-              <span>Linkdan nusxa</span>
-            </div>
             {/* Modal */}
             <span onClick={() => setModal2Open(true)} id="SpanId">
               <Connetct__Biznes/>
-              Ulashish
+              <span>Ulashish</span>
             </span>
           </div>
           <Modal
