@@ -80,8 +80,10 @@ const CompoBiznes = () => {
           <div className="Link__Connect">
             {/* Modal */}
             <span onClick={() => setModal2Open(true)} id="SpanId">
-              <Connetct__Biznes/>
-              <span>Ulashish</span>
+              <div className="Connetct__Biznes">
+                <Connetct__Biznes/>
+                <span>Ulashish</span>
+              </div>
             </span>
           </div>
           <Modal
