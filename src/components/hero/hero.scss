@@ -253,6 +253,11 @@
         }
     }
 }
+@media screen and (max-width: 576px) {
+    .Position_text{
+        top: 70%;
+    }
+}
 @media screen and (max-width: 350px) {
     .Position_text{
         gap: 5px;

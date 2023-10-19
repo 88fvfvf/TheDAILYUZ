@@ -312,7 +312,7 @@ const Header = ({ setPage }) => {
                     {res?.usd?.name} <strong>{res?.usd?.rate}</strong>
                     <span className="span" id="usd">
                       {" "}
-                      {res?.usd?.diff}
+                      {"+" + res?.usd?.diff}
                     </span>
                   </p>
                 </SwiperSlide>
@@ -321,7 +321,7 @@ const Header = ({ setPage }) => {
                     {res?.rub?.name} <strong>{res?.rub?.rate}</strong>
                     <span className="span" id="rub">
                       {" "}
-                      {res?.rub?.diff}
+                      {"+" + res?.rub?.diff}
                     </span>
                   </p>
                 </SwiperSlide>
@@ -330,7 +330,7 @@ const Header = ({ setPage }) => {
                     {res?.eur?.name} <strong>{res?.eur?.rate}</strong>
                     <span className="span" id="eur">
                       {" "}
-                      {res?.eur?.diff}
+                      {"+" + res?.eur?.diff}
                     </span>
                   </p>
                 </SwiperSlide>

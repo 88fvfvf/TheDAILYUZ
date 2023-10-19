@@ -29,7 +29,7 @@ const Hero = () => {
                             data.slice(3).map(single => {
                                 try {
                                     const UrlData = new URL(single?.url);
-                                    var maxLength = 70
+                                    var maxLength = 50
                                     var text = single?.title;
                                     if (text.length > maxLength){
                                         text = text.slice(0, maxLength) + '...';
