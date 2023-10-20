@@ -132,6 +132,17 @@ span#SpanId{
         font-weight: 500;
 }
 }
+.ant-btn-primary{
+    color: #fff !important;
+    background-color: #0F1640 !important;
+}
+.ant-btn-default{
+
+    &:hover{
+        color: #0F1640 !important;
+        border-color: #0F1640 !important;
+    }
+}
 @media screen and (max-width: 993px){
     .Title__h1 > h1{
         font-size: 30px;
