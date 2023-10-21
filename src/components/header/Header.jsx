@@ -134,7 +134,7 @@ const Header = ({ setPage }) => {
             break;
           default:
             Local = "41.2995%2C69.2401";
-            setSity("Topilmadi");
+            setSity("Toshkent. sh.");
         }
 
         axios
@@ -199,8 +199,12 @@ const Header = ({ setPage }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.location.href = `/search?${value}`;  
-  };
+    if (value !== undefined && value !== "") {
+        window.location.href = `/search?${value}`;
+    } else {
+        console.log("input error");
+    }
+};
 
   const [category, setCategory] = useState([]);
 
@@ -218,7 +222,7 @@ const Header = ({ setPage }) => {
 
   var Translate = now.format("dddd");
 
-  switch (Translate) {
+  switch (Translate) {  
     case "Monday":
       Translate = "Dushanba";
       break;
