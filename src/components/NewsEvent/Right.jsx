@@ -19,7 +19,7 @@ const Right = ( { url, Right_img,  Right_title, Right_date, Clock } ) => {
                 </div>
             </div>
             <div className="Going">
-                    <a href="https://www.youtube.com/" target="_blank"><Going/></a>
+                    <a href={`${UrlData.pathname}`}><Going/></a>
                 </div>
         </div>
     )

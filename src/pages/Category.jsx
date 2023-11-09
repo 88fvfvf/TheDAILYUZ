@@ -29,7 +29,7 @@ const Category = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${Base_Url}category/${params.slug}/`);
+        const response = await axios.get(`${Base_Url}category/${params.slug}/?page=${page}`);
         console.log(response?.data?.results);
         setCategory(response?.data);
       } catch (not) {

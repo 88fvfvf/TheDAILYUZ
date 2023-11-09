@@ -24,7 +24,7 @@ var now = moment();
 
 export var Moon = now.format("MMM");
 
-export let Base_Url = "https://thedailyuz.uchqunusmonov.uz/";
+export let Base_Url = "https://api.thedailyuz.uchqunusmonov.uz/";
 
 const Header = ({ setPage }) => {
   // =------------------ useState hook ------------------------=

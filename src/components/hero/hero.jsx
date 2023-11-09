@@ -14,6 +14,7 @@ const Hero = () => {
         axios.get(`${Base_Url}?page=1&page_size=4`)
             .then(response => {
                 setData(response?.data?.results);
+                console.log(response?.data?.results);
             })
             .catch(error => {
                 console.log(error);
