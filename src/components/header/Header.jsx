@@ -411,9 +411,9 @@ const Header = ({ setPage }) => {
             <ul className="bottom_ul">
               {category.map((cat) => (
                 <NavLink
-                  key={cat.id} // Provide a unique key prop here
+                  key={cat.id}
                   to={`/yangiliklar/${cat?.slug}/`}
-                  onClick={() => setPage(1)}
+                  // onClick={() => setPage(1)}
                 >
                   <li>{cat?.title}</li>
                 </NavLink>

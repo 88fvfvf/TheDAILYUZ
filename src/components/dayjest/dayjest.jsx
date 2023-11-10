@@ -69,7 +69,7 @@ const Dayjest = ({ dayjest_title, lastWeek }) => {
           >
             {Array.isArray(lastWeek) &&
               lastWeek.map((Content) => (
-                <SwiperSlide key={Content?.url}>
+                <SwiperSlide key={Content?.id}>
                   <Dayjest_Card
                     url={Content?.url}
                     Content_img={Content?.image}

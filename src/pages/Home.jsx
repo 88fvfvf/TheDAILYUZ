@@ -30,7 +30,6 @@ const Home = () => {
   useEffect(() => {
     axios.get(`${Base_Url}?page=${page}&page_size=4`)
       .then(SearchThen => {
-        // Filter out duplicates and add only unique items to the set
         SearchThen?.data?.results.forEach(item => {
           if (!uniqueEventSet.has(item.id)) {
             uniqueEventSet.add(item.id);
