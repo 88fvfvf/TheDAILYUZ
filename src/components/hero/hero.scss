@@ -4,7 +4,7 @@
 
 
 .hero {
-    @include flex(start, space-between);
+    @include flex(flex-start, space-between);
     padding-top: 50px;
     padding-bottom: 50px;
     gap: 20px;
@@ -12,7 +12,7 @@
 .hero__right{
     width: 630px;
     > div{
-        @include flex(inherit,start);
+        @include flex(inherit,flex-start);
         text-overflow: ellipsis; 
         white-space: wrap;
         &:nth-child(1){
@@ -182,7 +182,7 @@
         margin: auto;
         >div{
             display: flex;
-            justify-content: start;
+            justify-content: flex-start;
             align-items: center;
             padding-left: 0;    
         }
