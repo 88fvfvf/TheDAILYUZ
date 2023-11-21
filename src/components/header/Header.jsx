@@ -1,24 +1,11 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link, Navigate, NavLink, useLocation } from "react-router-dom";
-import {
-  Calendar,
-  Instagram,
-  Logo,
-  Loop_Header,
-  TeleIcon,
-} from "../../assets/icon";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import {Calendar,Instagram,Logo,Loop_Header,TeleIcon,} from "../../assets/icon";
 import "./header.scss";
 import moment from "moment";
-
-// SWIPPER
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/navigation";
-
-import { Autoplay } from "swiper/modules";
+import Valute from "./valute/Valute";
 
 var now = moment();
 
@@ -26,46 +13,11 @@ export var Moon = now.format("MMM");
 
 export let Base_Url = "https://api.thedailyuz.uchqunusmonov.uz/";
 
-const Header = ({ setPage }) => {
+const Header = () => {
   // =------------------ useState hook ------------------------=
   const [value, setValue] = useState();
 
-  const [res, setRes] = useState([]);
-
-  useEffect(() => {
-    axios.get(`${Base_Url}currency/`).then((res) => {
-      setRes(res?.data);
-    });
-  }, []);
-
-  var usd = res?.usd?.diff;
-  var rub = res?.rub?.diff;
-  var eur = res?.eur?.diff;
-
-  if (usd) {
-    document.getElementById("usd").style.color = usd.includes("-")
-      ? "red"
-      : "green";
-    usd = usd.includes("-") ? usd : "+" + usd;
-    document.getElementById("usd").innerText = usd;
-  }
-
-  if (rub) {
-    document.getElementById("rub").style.color = rub.includes("-")
-      ? "red"
-      : "green";
-    rub = rub.includes("-") ? rub : "+" + rub;
-    document.getElementById("rub").innerText = rub;
-  }
-
-  if (eur) {
-    document.getElementById("eur").style.color = eur.includes("-")
-      ? "red"
-      : "green";
-    eur = eur.includes("-") ? eur : "+" + eur;
-    document.getElementById("eur").innerText = eur;
-  }
-
+  
   const [weather, setWeather] = useState([]);
   const [sity, setSity] = useState("");
   useEffect(() => {
@@ -200,11 +152,11 @@ const Header = ({ setPage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (value !== undefined && value !== "") {
-        window.location.href = `/search?${value}`;
+      window.location.href = `/search?${value}`;
     } else {
-        console.log("input error");
+      console.log("input error");
     }
-};
+  };
 
   const [category, setCategory] = useState([]);
 
@@ -222,7 +174,7 @@ const Header = ({ setPage }) => {
 
   var Translate = now.format("dddd");
 
-  switch (Translate) {  
+  switch (Translate) {
     case "Monday":
       Translate = "Dushanba";
       break;
@@ -295,50 +247,14 @@ const Header = ({ setPage }) => {
     });
   }, []);
 
+
   return (
     <header id="header">
       <div className="header">
         <div className="header__top">
           <div className="container">
             <div className="header__top_left">
-              <Swiper
-                loop={true}
-                freeMode={true}
-                speed={1000}
-                autoplay={{
-                  delay: 1000,
-                  disableOnInteraction: false,
-                }}
-                modules={[Autoplay]}
-              >
-                <SwiperSlide>
-                  <p className="course">
-                    {res?.usd?.name} <strong>{res?.usd?.rate}</strong>
-                    <span className="span" id="usd">
-                      {" "}
-                      {"+" + res?.usd?.diff}
-                    </span>
-                  </p>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <p className="course">
-                    {res?.rub?.name} <strong>{res?.rub?.rate}</strong>
-                    <span className="span" id="rub">
-                      {" "}
-                      {"+" + res?.rub?.diff}
-                    </span>
-                  </p>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <p className="course">
-                    {res?.eur?.name} <strong>{res?.eur?.rate}</strong>
-                    <span className="span" id="eur">
-                      {" "}
-                      {"+" + res?.eur?.diff}
-                    </span>
-                  </p>
-                </SwiperSlide>
-              </Swiper>
+              <Valute/>
             </div>
             <div className="header__top_right">
               {social?.map((res) => (
@@ -378,7 +294,7 @@ const Header = ({ setPage }) => {
 
                 <div className="weather-text">
                   <div className="ico-weth">
-                    <img src={weather?.icon}/>
+                    <img src={weather?.icon} />
                   </div>
                   <div className="ico-weth-txt">
                     <p>

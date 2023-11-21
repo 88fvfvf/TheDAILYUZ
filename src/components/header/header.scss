@@ -215,7 +215,13 @@ input:focus {
     outline: none;
     accent-color: #262C51;
 }
-  
+// .swiper{
+//     display: none !important;
+// }
+.Desktop{
+    display: flex;
+    gap: 24px;
+}
 @media screen and (max-width: 742px) {
     .header__top > div{
         @include flex(center,space-between);

@@ -29,7 +29,7 @@ const routesPrivate = [
     component: <SinglePage/>
   },
   {
-    path: "/search?",
+    path: "search/?q=",
     component: <Search/>
   }
 ]
