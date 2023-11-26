@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import moment from "moment";
 import { Moon } from "../header/Header";
+import NoData from "./NoData";
 
 const Dayjest = ({ dayjest_title, lastWeek }) => {
   return (
@@ -86,6 +87,7 @@ const Dayjest = ({ dayjest_title, lastWeek }) => {
               ))}
           </Swiper>
         </div>
+          {lastWeek ? <NoData/> : null}
       </div>
     </section>
   );
