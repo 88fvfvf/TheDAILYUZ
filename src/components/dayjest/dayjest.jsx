@@ -87,7 +87,7 @@ const Dayjest = ({ dayjest_title, lastWeek }) => {
               ))}
           </Swiper>
         </div>
-          {lastWeek ? <NoData/> : null}k
+          {lastWeek ? <NoData/> : null}
       </div>
     </section>
   );
