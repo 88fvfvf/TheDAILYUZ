@@ -64,15 +64,6 @@ $hover_link: #5064D6;
         stroke: #A2A5BF;
     }
 }
-.NoData{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    > h3 {
-        color: #A2A5BF;
-        font-family: 'Vollkorn', serif;
-    }
-}
 @media screen and (max-width: 1330px){
     .Card_Wrapper{
         width: 100%;
