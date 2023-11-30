@@ -6,7 +6,7 @@ import MobileValute from "./MobileValute";
 
 const Valute = () => {
   const [res, setRes] = useState([]);
-  const [width] = useState(window.innerWidth);
+  const [width,setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     axios.get(`${Base_Url}currency/`).then((res) => {
@@ -37,6 +37,18 @@ const Valute = () => {
     document.getElementById("eur").style.color = color;
     document.getElementById("eur").innerText = `${sign}${eur}`;
   }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
