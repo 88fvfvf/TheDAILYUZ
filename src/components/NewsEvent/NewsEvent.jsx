@@ -10,6 +10,7 @@ import moment from "moment";
 import { Base_Url, Moon } from "../header/Header";
 import axios from "axios";
 import { message } from 'antd';
+import NoData from "../dayjest/NoData/NoData";
 
 
 
@@ -89,10 +90,11 @@ const NewsEvent = ({title,content,Click}) =>{
                 <div className="Right" id="right">
                     <h2>koʻp oʻqilgan</h2>
                         <div className="right_content_card">
-                            {       
+                            {most < 0 ?       
                                 most?.map(right => 
                                     <Right key={right.id} Right_img={right?.image} Right_title={right?.title} url={right?.url} Right_date={Moon + moment(right?.created).format(" DD", {locale: 'ru'})} Clock={right?.views_count}/>
                                 )
+                                : <NoData/>
                             }
                         </div>
                         <a><button onClick={ClickMost}><Resets/>Ko’proq</button></a>

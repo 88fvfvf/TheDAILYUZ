@@ -68,7 +68,7 @@ const Dayjest = ({ dayjest_title, lastWeek }) => {
               })
             }
           >
-            {Array.isArray(lastWeek) &&
+            {Array.isArray(lastWeek) && lastWeek.length > 0 ?
               lastWeek.map((Content) => (
                 <SwiperSlide key={Content?.id}>
                   <Dayjest_Card
@@ -84,10 +84,10 @@ const Dayjest = ({ dayjest_title, lastWeek }) => {
                     Content_eye={Content?.views_count}
                   />
                 </SwiperSlide>
-              ))}
+              )):<NoData />}
           </Swiper>
         </div>
-          {lastWeek ? <NoData/> : null}
+        {/* {lastWeek.length > 0 ? console.log("True") : <NoData />} */}
       </div>
     </section>
   );
