@@ -69,7 +69,6 @@ const NewsEvent = ({title,content,Click}) =>{
           })
       }, [page])
 
-
     return (
         <div id="news" className="container">
           {contextHolder}
@@ -89,12 +88,14 @@ const NewsEvent = ({title,content,Click}) =>{
                 </div>
                 <div className="Right" id="right">
                     <h2>koʻp oʻqilgan</h2>
-                        <div className="right_content_card">
+                        <div className={most < 0 ? "right_content_card" : "right_content_card ClassNoData"}>  
                             {most < 0 ?       
                                 most?.map(right => 
                                     <Right key={right.id} Right_img={right?.image} Right_title={right?.title} url={right?.url} Right_date={Moon + moment(right?.created).format(" DD", {locale: 'ru'})} Clock={right?.views_count}/>
                                 )
-                                : <NoData/>
+                                : ( 
+                                <NoData/>
+                                )
                             }
                         </div>
                         <a><button onClick={ClickMost}><Resets/>Ko’proq</button></a>
